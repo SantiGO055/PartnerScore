@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid" style="align-items: unset;">
+        <a class="navbar-brand" routerLink="/">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+
+                    <!-- <a [routerLink]="['profile-component', this.session, this.profile]" class="nav-link">Profile</a> -->
+                    <a routerLink="/profile-component" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="this.profile && !this.profileModified.username" class="nav-link active"
+                        routerLink="/profile-component">
+                        <strong>Usuario:</strong> {{this.profile.username}} </a>
+                    <a *ngIf="this.profileModified.username" class="nav-link active" routerLink="/profile-component">
+                        <strong>Usuario:</strong> {{this.profileModified.username}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
